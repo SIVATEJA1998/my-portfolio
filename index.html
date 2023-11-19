@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Teja Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+
+<!-- Add Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Add Font Awesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 56px;
+            background: url('HomePageImage.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        #main-content {
+            text-align: center;
+            margin-top: 150px;
+            color: white;
+        }
+        #main-content h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+        #main-content h2 {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        #main-content .btn-resume {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+        .section {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .about-info {
+            margin-top: 20px;
+        }
+        .about-info p {
+            font-size: 1.1em;
+            color: #333;
+        }
+	.footer {
+  	width: 100%;
+  	background-color: transparent;
+  	color: white;
+  	text-align: center;
+  	padding: 10px 0;
+  	margin-top: 20px;
+	}
+
+/* Navbar link hover effect */
+.navbar-nav .nav-link {
+    transition: color 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #a777e3;
+}
+
+/* Section padding and shadow for depth */
+.section {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* Space between sections */
+}
+
+}
+
+/* Apply Google Font */
+body, h1, h2, h3, p, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Use Font Awesome icons in front of links for a more polished look */
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link i {
+    margin-right: 8px;
+}
+
+/* Example for the About link */
+#link-about::before {
+    content: '\f007'; /* FontAwesome User icon */
+    font-family: 'Font Awesome 5 Free';
+    padding-right: 5px;
+}
+
+/* About Section */
+#section-about {
+    text-align: center; /* Center the title and description */
+}
+
+#section-about h2 {
+    margin-bottom: 20px;
+}
+
+#section-about p {
+    margin-bottom: 30px; /* Space between description and details */
+}
+
+#section-about .personal-details {
+    text-align: Left; /* Align the personal details text to the left */
+    margin-bottom: 20px; /* Space between details and image */
+}
+
+/* Media query for smaller screens to stack image and details */
+@media (max-width: 768px) {
+    #section-about .personal-details,
+    #section-about .col-md-4,
+    #section-about .col-md-8 {
+        text-align: center;
+    }
+    
+    #section-about .personal-details {
+        order: 2; /* Personal details come after the image */
+    }
+    
+    #section-about .col-md-4 {
+        order: 1; /* Image comes first */
+    }
+}
+
+.skills-section {
+    text-align: left; 
+}
+
+
+/* Add space between different skill entries */
+.skill-bar + .skill-bar {
+    margin-top: 20px; /* This adds space between skill entries */
+}
+
+
+#section-about .col-md-4 {
+    display: flex;
+    align-items: center; /* This will vertically center align the items in the flex container */
+}
+
+#section-about .col-md-4,
+#section-about .col-md-8 {
+    flex: 1; /* This will give equal width to both columns */
+}
+
+/* Educational Icons */
+.education-icon {
+    color: #4a90e2;
+    margin-right: 10px;
+}
+
+/* Card Layout */
+.education-card {
+    background-color: #f9f9f9;
+    border-left: 4px solid #4a90e2;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.education-card h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+/* Timeline Style */
+.timeline {
+    border-left: 2px solid #4a90e2;
+    position: relative;
+    padding: 0 0 20px 20px;
+    margin-left: 20px;
+}
+
+.timeline::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4a90e2;
+    position: absolute;
+    left: -6px;
+    top: 0;
+}
+
+/* Typography and Color Scheme */
+#section-education h2 {
+    color: #4a90e2;
+    margin-bottom: 30px;
+}
+
+#section-education h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#section-education p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Work Experience Styles */
+
+/* Icons and Badges */
+.experience-icon {
+    color: #495057;
+    margin-right: 5px;
+}
+
+/* Job Title and Company Name */
+.job-title {
+    font-weight: bold;
+    color: #000;
+}
+
+.company-name {
+    font-weight: bold;
+    font-style: italic;
+    color: #007bff;
+}
+
+/* Card Layout for Experience Entries */
+.experience-card {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.experience-card h3 {
+    margin-top: 0;
+}
+
+/* Interactive Elements */
+.experience-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.contact-section {
+  background: #f2f2f2; /* Light grey background */
+  border-radius: 10px;
+  padding: 40px;
+  margin-top: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  margin: 20px 0;
+}
+
+.contact-info i {
+  color: #007bff; /* Bootstrap primary blue */
+  margin-right: 10px;
+}
+
+.social-media-links a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-media-links i {
+  font-size: 24px; /* Larger icons for social media */
+  transition: color 0.3s;
+}
+
+.social-media-links a:hover i {
+  color: #007bff; /* Change icon color on hover */
+}
+
+/* Add a subtle hover effect to your LinkedIn link */
+.social-media-links a:hover {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Change text color on hover */
+}
+
+
+.certification-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.certification-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    width: 100px; /* Or any size you wish */
+    height: auto;
+    margin: 0 auto; /* Centers the image */
+    padding-top: 10px; /* Space from top of card */
+}
+
+.card-body {
+    text-align: center; /* Centers the text in card body */
+}
+
+.btn-primary {
+    background-color: #4a90e2; /* Matching your education icon color */
+    border-color: #4a90e2;
+}
+
+.btn-primary:hover {
+    background-color: #367cd5; /* A slightly darker shade for hover state */
+    border-color: #367cd5;
+}
+
+/* Typography for the card title and text */
+.card-title {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px; /* Space between title and text */
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.project-card {
+    transition: transform .2s; /* Animation for card */
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Scale the card on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+}
+
+.btn-primary {
+    margin-top: 15px; /* Spacing for button */
+}
+
+.modal-body a {
+    color: #007bff;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}
+
+/* Improve button hover effect */
+.btn-resume {
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+
+.btn-resume:hover {
+    background-color: #fff;
+    color: #6e8efb;
+}
+
+
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" id="home">PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="link-about">About</a>
+                    </li>
+		    <li class="nav-item">
+                        <a class="nav-link" href="#" id="link-education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="link-experience">Experience</a>
+                    </li>
+		    <li class="nav-item">
+   			<a class="nav-link" href="#" id="link-certifications">Certifications</a>
+		    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="link-projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="link-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main-content" class="container">
+        <h1>Siva Teja Mundlamuri</h1>
+        <h2>I am a Software Development Engineer in Test</h2>
+        <a href="SivaTejaMundlamuri_AutomationTesting_Resume.pdf" download="Siva_Teja_Mundlamuri_Resume.pdf" class="btn btn-primary btn-resume" target="_blank">Resume</a>
+    </div>
+
+    <!-- About Section -->
+    <div id="section-about" class="container section" style="background-color: #f8f9fa;"> <!-- Changed the background color to match the rest of the site -->
+	<h2>About Me</h2>
+           <p>My name is Siva Teja Mundlamuri born and raised in a small village in India. I completed my under graduation in 2019 in Electronics and communication Engineering with 83 percentage.<br> 
+At this time, I got interest in programming and this interest made me to learn programming languages along with my coursework.<br>
+After that I joined in cognizant Technology Solutions and worked for 2 years and 7 months as an Web Automation Tester in insurance Domain.<br>
+In Cognizant, I worked for 2 clients, one is  Japan based insurance company known as Manulife and the other is UK based insurance company known as Direct Line Group (DLG). At this time, I worked on java selenium-based frameworks such as craft framework and serenity BDD framework.<br>
+After that I came to USA to do my masters.</p>
+        <div class="row">
+	<div class="col-md-4">
+                <img src="AboutImage.jpeg" alt="Siva Teja" class="img-fluid rounded-circle mb-3"> <!-- Replace with your actual image -->
+            </div>
+            <div class="col-md-8">
+		<h2 Style="text-align: left">Software Quality Analyst</h2>
+                <p Style="text-align: left">Two Plus Year of experience as a Software Quality Assurance Analyst in Analyzing, Designing, and Implementation of Quality Assurance testing Strategies for Web-based applications.</p>
+                <div class="personal-details">
+                    <p><strong>Date of Birth:</strong> 26 August 1998</p>
+                    <p><strong>Phone:</strong> +1 203 551 0324</p>
+                    <p><strong>Email:</strong> sivateja1998.m@gmail.com</p>
+                    <p><strong>Highest Degree:</strong> Master's in Computer Science</p>
+                    <p><strong>Residing City:</strong> Nashua, New Hampshire, USA. Zipcode: 03064</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"> <!-- Skills column 1 -->
+                <h3 class="skills-section">Skills:</h3>
+
+		<div class="skill-bar">
+                    <p Style="text-align: left">Analytical and Logical thinking</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%; background-color: #008000;">100%</div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <p Style="text-align: left">HTML</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%; background-color: #FF00FF;">100%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">CSS</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%; background-color: #5c7c70;">90%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Java Script</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%; background-color: #a85065;">80%</div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <p Style="text-align: left">C Language</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" style="width: 100%; background-color: #e7b7c5;">100%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Waterfall, and Agile (SCRUM) Methodology</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%; background-color: #7c007d;">100%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">HP ALM, Jira & Confluence Tools</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%; background-color: #72ffff;">80%</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6"> <!-- Skills column 2 -->
+                <h3>&nbsp;</h3> <!-- Invisible header for alignment -->
+                <div class="skill-bar">
+                    <p Style="text-align: left">JAVA</p>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" style="width: 100%; background-color: #f50000;">100%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Selenium</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%; background-color: #0000FF;">90%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Oracle SQL & MySQL</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%; background-color: #F39C12;">85%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Cucumber Framework</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%; background-color: #2C3E50;">85%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Keyword Driven Framework</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 100%; background-color: #8e2e0e;">100%</div>
+                    </div>
+                </div>
+		<div class="skill-bar">
+                    <p Style="text-align: left">Insurance Domain Knowledge</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%; background-color: #F1C40F;">85%</div>
+                    </div>
+                </div>
+                <!-- Add more skills here -->
+            </div>
+        </div>
+    </div>
+
+<!-- Education Section -->
+<div id="section-education" class="container section" style="background-color: #ffffff;">
+    <h2 class="text-center">Education</h2>
+    <div class="education-card">
+        <h3><i class="fas fa-graduation-cap education-icon"></i>Master's Degree:</h3>
+        <p><strong>University:</strong> Rivier University</p>
+        <p><strong>Branch:</strong> Computer Science</p>
+        <p><strong>Duration:</strong> August 2022 - December 2023</p>
+        <p><strong>Grade:</strong> 4/4 Points</p>
+    </div>
+    <div class="education-card">
+        <h3><i class="fas fa-graduation-cap education-icon"></i>Undergraduation:</h3>
+        <p><strong>College:</strong> Prakasam Engineering College</p>
+        <p><strong>Branch:</strong> Electronics and Communication Engineering</p>
+        <p><strong>Duration:</strong> June 2015 - May 2019</p>
+        <p><strong>Percentage:</strong> 83.78%</p>
+    </div>
+</div>
+
+
+
+    <!-- Work Experience Section -->
+<div id="section-experience" class="container section" style="background-color: #ffffff;">
+    <h2 class="text-center">Work Experience</h2>
+    <div class="experience-card">
+        <h3>
+            <i class="fas fa-briefcase experience-icon"></i>
+            <span class="job-title">Software Quality Analyst</span> at 
+            <span class="company-name">Cognizant Technology Solutions</span>
+        </h3>
+        <p>(January 2020 - July 2022)</p>
+	<h5>Roles and Responsibilities:</h5>
+        <ul>
+	        <li>Responsible for analyzing system requirements and developing a test plan for the project-based on SDLC.</li>
+                <li>Interacting with Business Analyst if any clarification needed regarding requirements.</li>
+		<li>Writing and executing Test cases and Test Scripts in application life cycle management tools like HP ALM, after reviewing the business requirements and technical specifications.</li>
+                <li>Developing and Maintenance of Automation Script using J2SE, Selenium and CRAFT Framework.</li>
+		<li>Regression testing using automation suit and Reporting the Results to Team lead. Fixing the existing automation code if any changes need in the code.</li>
+                <li>Involved in System testing, cross-platform testing, and cross-browser Testing on web-based Applications.</li>
+		<li>Raise Defects in HP ALM and report it to developers by interacting with them.</li>
+                <li>Keeping a track of all the Defects Reported and their Status.</li>
+		<li>Performing regression testing if any upgrade of software went on backend side to ensure no functionality was broken due to an upgrade.</li>
+                <li>Participate in daily scrum meetings and interact with team lead to report testing status.</li>
+		<li>Interacting with developers and other team members to ensure high quality software & play a key role in the timely delivery of the product.</li>
+                <li>Assigning work to my testing team members and ensuring whether the testing process is going smoothly or not.</li>
+		<li>Giving Training to new joiners in the testing team about the functionality of the application and what he/she needs to do.</li>
+                <li>Interacting with the client on weekly basis to clarify doubts if any.</li>
+		<li>Worked on Insurance Domains Related Projects.</li>
+                <!-- ... more responsibilities ... -->
+        </ul>
+    </div>
+    <!-- ... more experience cards ... -->
+</div>
+
+
+
+<!-- Certifications Section -->
+<div id="section-certifications" class="container section">
+    <h2 class="text-center">Certifications</h2>
+    <div class="row">
+
+        <!-- HackerRank Certifications -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card certification-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Java Basic Certification</h5>
+                    <p class="card-text">Issued by HackerRank - March 2023</p>
+                    <p class="card-text"><strong>ID:</strong> 84UEB5C25867</p>
+                    <a href="https://www.hackerrank.com/certificates/844e85c25867" class="btn btn-primary" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card certification-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">SQL Intermediate Certification</h5>
+                    <p class="card-text">Issued by HackerRank - March 2023</p>
+                    <p class="card-text"><strong>ID:</strong> C935P84Y7F01</p>
+                    <a href="https://www.hackerrank.com/certificates/c935d8471f01" class="btn btn-primary" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+
+
+	<!-- Udemy Certifications -->
+       <!-- <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card certification-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Selenium Certification will be added soon</h5>
+                    <p class="card-text">Issued by Udemy</p>
+                    <a href="link_to_certificate" class="btn btn-primary" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card certification-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Java Certification will be added soon</h5>
+                    <p class="card-text">Issued by Oracle Corporation</p>
+                    <a href="link_to_certificate" class="btn btn-primary" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional certification cards can be added here -->
+    </div>
+</div>
+
+
+
+
+<!-- Projects Section -->
+<div id="section-projects" class="container section py-5">
+    <h2 class="text-center mb-5">Projects</h2>
+    <div class="row">
+        <!-- Master's Project Card -->
+        <div class="col-lg-6 mb-4">
+            <div class="card project-card">
+                <div class="card-body">
+                    <h5 class="card-title">Master's Project: Optimizing Java Selenium Framework</h5>
+                    <p class="card-text">Improving Java Selenium Framework for Automated Test Distribution and Full Resource Utilization.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mastersProjectModal">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job Experience Project Card -->
+        <div class="col-lg-6 mb-4">
+            <div class="card project-card">
+                <div class="card-body">
+                    <h5 class="card-title">Job Experience Project: Manulife Japan</h5>
+                    <p class="card-text">I worked on a admin tool called ingenium which manages all the admin operations of the manulife insurance products.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#jobExperienceModal_Manulife">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+	<div class="col-lg-6 mb-4">
+            <div class="card project-card">
+                <div class="card-body">
+                    <h5 class="card-title">Job Experience Project: Direct Line Group</h5>
+                    <p class="card-text">I worked on a admin tool, which manages all the admin operations of the Direct Line Group insurance products.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#jobExperienceModal_DLG">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Master's Project Modal -->
+<div class="modal fade" id="mastersProjectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Master's Project Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p><strong>Project Name:</strong> Optimizing Java Selenium Framework with Automated Test Distribution and Full Resource Utilization.</p>
+            <p><strong>Description:</strong> The "Optimizing Java Selenium Framework with Automated Test Distribution and Full Resource Utilization" project aims to enhance our Selenium Java testing framework to address critical challenges. The project focuses on dynamic thread allocation and parallel execution for efficient system resource utilization, automated test case distribution to minimize manual effort and errors, and improved scalability to handle an increasing volume of test cases. It also includes robust data management for seamless database interactions and consolidated reporting for a comprehensive view of test outcomes. These improvements are designed to speed up test execution, reduce costs, and strengthen our competitive position by accelerating our response to market demands.</p>
+            <p><strong>Tools & Technologies Used:</strong> Eclipse, HTML, CSS, Core Java, Selenium & MySQL</p>
+            <p><strong>Code GitHub link:</strong> <a href="https://github.com/SivaTejaUSA/Masters_Project.git" target="_blank">URL of GitHub</a></p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job Experience Project Modal -->
+<div class="modal fade" id="jobExperienceModal_Manulife" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Job Experience Project Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p><strong>Project Name:</strong> Manulife Japan</p>
+            <p><strong>Project Duration:</strong> 19 Months</p>
+            <p><strong>Description:</strong> I worked on a admin tool called ingenium which manages all the admin operations of the manulife insurance products</p>
+            <p><strong>Tools & Technologies Used:</strong>HP ALM, Eclipse, Core Java, Selenium, Oracle SQL & Craft Framework</p>
+            <p><strong>Domain:</strong> Life Insurance</p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="jobExperienceModal_DLG" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Job Experience Project Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <p><strong>Project Name:</strong> Direct Line Group</p>
+            <p><strong>Project Duration:</strong> 12 Months</p>
+            <p><strong>Description:</strong> I worked on a admin tool, which manages all the admin operations of the Direct Line Group insurance products.</p>
+            <p><strong>Tools & Technologies Used:</strong>Jira, Confluence, Visual Studio Code, Core Java, Selenium & Serinity BDD Framework</p>
+            <p><strong>Domain:</strong> Home Insurance</p>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Contact Section -->
+    <div id="section-contact" class="container section contact-section" style="display: none;">
+     <h2>Contact Me</h2>
+    <div id="section-contact" class="container">
+  <div class="contact-info">
+    <i class="fas fa-clock"></i>
+    <span>Contact Time: Available 24/7 365 Days</span>
+  </div>
+  <div class="contact-info">
+    <i class="fas fa-phone"></i>
+    <span>Phone Number: +1 203 551 0324</span>
+  </div>
+  <div class="contact-info">
+    <i class="fas fa-envelope"></i>
+    <span>Email ID: sivateja1998.m@gmail.com</span>
+  </div>
+  <div class="social-media-links">
+    <a href="https://www.linkedin.com/in/siva-teja-mundlamuri" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
+</div>
+</div>
+
+
+
+    <!-- Other sections remain unchanged -->
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023 | Made with ❤️ by Siva Teja Mundlamuri</p>
+</div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+    // JavaScript to handle navigation
+    document.addEventListener('DOMContentLoaded', (event) => {
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach((section) => {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            document.querySelector(sectionId).style.display = 'block';
+            // Hide main content
+            document.getElementById('main-content').style.display = 'none';
+        }
+
+        // Navigation click handlers
+        document.getElementById('link-about').addEventListener('click', () => showSection('#section-about'));
+        document.getElementById('link-education').addEventListener('click', () => showSection('#section-education')); // Corrected this line
+        document.getElementById('link-experience').addEventListener('click', () => showSection('#section-experience'));
+	document.getElementById('link-certifications').addEventListener('click', () => showSection('#section-certifications'));
+        document.getElementById('link-projects').addEventListener('click', () => showSection('#section-projects'));
+        document.getElementById('link-contact').addEventListener('click', () => showSection('#section-contact'));
+        document.getElementById('home').addEventListener('click', () => {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach((section) => {
+                section.style.display = 'none';
+            });
+            // Show main content
+            document.getElementById('main-content').style.display = 'block';
+        });
+    });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
